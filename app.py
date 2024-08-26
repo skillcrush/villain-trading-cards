@@ -71,6 +71,18 @@ def add_user():
 		db.session.commit()
 		return render_template("villain.html", villains=Villain.query.all())
 
+@app.route("/deleteVillain", methods=["POST"])
+def delete_user():
+	name = request.form.get("name")
+	villain = Villain.query.filter_by(name=name).first()
+	if villain:
+		db.session.delete(villain)
+		db.session.commit()
+		return render_template("villain.html", villains=Villain.query.all())
+	else:
+		return render_template("deletevillain.html",
+		                       errors=["Oops! That villain doesn't exist!"])
+
 # Run the flask server
 if __name__ == "__main__":
     app.run()
