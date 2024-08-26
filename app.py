@@ -30,12 +30,16 @@ with app.app_context():
 
 @app.route("/")
 def villains_cards():
-	return render_template("villain.html")
+	return render_template("villain.html", villains=Villain.query.all())
 
 
 @app.route("/add", methods=["GET"])
 def add_villain():
 	return render_template("addvillain.html", errors=[])
+
+@app.route("/delete", methods=["GET"])
+def delete_villain():
+	return render_template("deletevillain.html", errors=[])
 
 @app.route("/addVillain", methods=["POST"])
 def add_user():
