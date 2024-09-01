@@ -4,7 +4,9 @@
   <script src="https://kit.fontawesome.com/8391330468.js" crossorigin="anonymous">
   </script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='villain.css') }}">
+  <link rel="stylesheet" type="text/css" href="static/villain.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="static/addvillain.js"></script>
 </head>
 
 <body>
@@ -20,12 +22,9 @@
   <div class="content">
     <div class="form">
       <h2>ADD A CARD</h2>
-      <div class="errors">
-        {% for error in errors %}
-        <div class="error">{{ error }}</div>
-        {% endfor %}
+      <div id="errors">
       </div>
-      <form action="/addVillain" method="post">
+      <form id="form">
         <div class="form-input">
           <label for="name">name</label>
           <input type="text" name="name" />
@@ -39,10 +38,10 @@
           <input type="text" name="interests" />
         </div>
         <div class="form-input">
-          <label for="url">image URL</label>
+          <label for="image url">image url</label>
           <input type="text" name="url" />
         </div>
-        <button type="submit">Add Me!</button>
+        <button id="submit" type="submit">Add Me!</button>
       </form>
     </div>
   </div>

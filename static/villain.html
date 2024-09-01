@@ -4,7 +4,9 @@
   <script src="https://kit.fontawesome.com/8391330468.js" crossorigin="anonymous">
   </script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='villain.css') }}">
+  <link rel="stylesheet" type="text/css" href="static/villain.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="static/villain.js"></script>
 </head>
 
 <body>
@@ -17,25 +19,9 @@
       <a href="/delete"><i class="fas fa-times"> </i> remove card</a>
     </div>
   </div>
+
   <div class="content">
-    {% for villain in villains %}
-    <div class="card">
-      <h2 class="card-name">{{villain.name}}</h2>
-      <img src={{villain.url}} class="card-image" />
-      <div class="card-body">
-        <p class="card-description">
-          {{villain.description}}
-        </p>
-        <h4>Interests</h4>
-        <p class="card-interests">
-          {{villain.interests}}
-        </p>
-        <p class="card-date-added">
-          Date added: {{villain.date_added}}
-        </p>
-      </div>
-    </div>
-    {% endfor %}
+
   </div>
 </body>
 

@@ -4,7 +4,9 @@
   <script src="https://kit.fontawesome.com/8391330468.js" crossorigin="anonymous">
   </script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='villain.css') }}">
+  <link rel="stylesheet" type="text/css" href="static/villain.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="static/deletevillain.js"></script>
 </head>
 
 <body>
@@ -17,22 +19,18 @@
       <a href="/delete"><i class="fas fa-times"> </i> remove card</a>
     </div>
   </div>
+
   <div class="content">
-    <div class="form">
+    <form id="form" class="form">
       <h2>REMOVE A CARD</h2>
       <div class="form-input">
-        <form action="/deleteVillain" method="post">
-          <div class="errors">
-            {% for error in errors %}
-            <div class="error">{{ error }}</div>
-            {% endfor %}
-          </div>
-          <label>name</label>
-          <input type="text" name="name" />
+        <div id="errors"></div>
+        <label>name</label>
+        <input type="text" name="name" />
       </div>
       <button type="submit">Remove Me!</button>
-      </form>
-    </div>
+    </form>
+  </div>
   </div>
 </body>
 
