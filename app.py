@@ -37,10 +37,6 @@ def villains_cards():
 def add_villain():
 	return render_template("addvillain.html", errors=[])
 
-@app.route("/delete", methods=["GET"])
-def delete_villain():
-	return render_template("deletevillain.html", errors=[])
-
 @app.route("/addVillain", methods=["POST"])
 def add_user():
 	errors = []
